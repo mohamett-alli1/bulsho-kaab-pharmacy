@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#087f5b">
+
+<!-- PWA INSTALLATION -->
+<link rel="manifest" href="./manifest.json">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+<title>BULSHO-KAAB PHARMACY | Your Health Is Our Success</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root {
+    --green: #087f5b;
+    --dark: #07543e;
+    --orange: #e5a13a;
+    --light: #f4faf7;
+    --text: #26352f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: var(--text);
+    background: #fff;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+section {
+    padding: 85px 0;
+    scroll-margin-top: 85px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-title h2 {
+    font-size: 34px;
+    color: var(--dark);
+    margin-bottom: 10px;
+}
+
+.section-title p {
+    color: #77847e;
+}
+
+/* NAVIGATION */
+
+header {
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0,0,0,.07);
+}
+
+.navbar {
+    min-height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 21px;
+    font-weight: 800;
+    color: var(--dark);
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--orange);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+}
+
+.nav-links a {
+    font-size: 13px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--green);
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.lang-btn {
+    border: 1px solid #ddd;
+    background: white;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.menu-btn {
+    display: none;
+    font-size: 23px;
+    border: none;
+    background: none;
+    color: var(--dark);
+    cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+    background: linear-gradient(110deg, #f1faf5, #fff);
+    padding: 75px 0;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1.1fr .9fr;
+    align-items: center;
+    gap: 50px;
+}
+
+.hero-text h1 {
+    font-size: clamp(36px, 5vw, 55px);
+    line-height: 1.15;
+    color: #28352f;
+    margin-bottom: 22px;
+}
+
+.hero-text h1 span {
+    color: var(--orange);
+}
+
+.hero-text p {
+    color: #69766f;
+    max-width: 550px;
+    margin-bottom: 28px;
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 13px 22px;
+    border-radius: 9px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.btn-green {
+    background: var(--green);
+    color: white;
+}
+
+.btn-orange {
+    background: var(--orange);
+    color: white;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    opacity: .9;
+}
+
+/* IMAGE RATIOS */
+
+.hero-image,
+.about-image {
+    width: 100%;
+    aspect-ratio: 4/5;
+    height: auto;
+    max-height: 520px;
+    overflow: hidden;
+}
+
+.hero-image {
+    background: white;
+    border-radius: 20px;
+    padding: 12px;
+    box-shadow: 0 12px 35px rgba(0,0,0,.08);
+}
+
+.hero-image img,
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 14px;
+}
+
+/* ABOUT */
+
+.about {
+    background: white;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 55px;
+}
+
+.about-image {
+    background: var(--light);
+    border-radius: 18px;
+    padding: 15px;
+}
+
+.about-image img {
+    border-radius: 12px;
+}
+
+.about-text h3 {
+    color: var(--dark);
+    font-size: 29px;
+    margin-bottom: 15px;
+}
+
+.about-text p {
+    color: #6d7972;
+    margin-bottom: 15px;
+}
+
+.info-line {
+    margin: 12px 0;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.info-line i {
+    color: var(--green);
+    margin-top: 5px;
+}
+
+/* MANAGEMENT */
+
+.management {
+    background: var(--light);
+}
+
+.manager-card {
+    max-width: 800px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(0,0,0,.06);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    align-items: center;
+}
+
+.manager-photo {
+    width: 100%;
+    aspect-ratio: 4/5;
+    height: auto;
+    max-height: 450px;
+    background: #f4f7f5;
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.manager-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.manager-info h3 {
+    font-size: 25px;
+    color: var(--dark);
+    margin-bottom: 8px;
+}
+
+.manager-info .position {
+    color: var(--orange);
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.manager-info p {
+    color: #738078;
+    margin-bottom: 15px;
+}
+
+/* SERVICES */
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.service-card {
+    padding: 30px 22px;
+    border-radius: 15px;
+    background: white;
+    border: 1px solid #eaf0ec;
+    text-align: center;
+    transition: .3s;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,.07);
+}
+
+.service-card i {
+    font-size: 34px;
+    color: var(--green);
+    margin-bottom: 17px;
+}
+
+.service-card h3 {
+    color: var(--dark);
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 14px;
+    color: #77847e;
+}
+
+/* PRODUCTS */
+
+.products {
+    background: var(--light);
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.product-card {
+    background: white;
+    padding: 25px 15px;
+    text-align: center;
+    border-radius: 14px;
+    border: 1px solid #edf1ee;
+}
+
+.product-card i {
+    font-size: 36px;
+    color: var(--green);
+    margin-bottom: 15px;
+}
+
+.product-card h3 {
+    color: var(--dark);
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.product-card p {
+    font-size: 13px;
+    color: #78847d;
+}
+
+/* GALLERY */
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.gallery-item {
+    width: 100%;
+    aspect-ratio: 4/5;
+    height: auto;
+    background: #f1f6f3;
+    border-radius: 13px;
+    overflow: hidden;
+    padding: 7px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 9px;
+    transition: .3s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.04);
+}
+
+/* CONTACT */
+
+.contact {
+    background: var(--light);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+}
+
+.contact-info,
+.contact-form {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0,0,0,.04);
+}
+
+.contact-info h3,
+.contact-form h3 {
+    color: var(--dark);
+    margin-bottom: 20px;
+}
+
+.contact-item {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.contact-item i {
+    color: var(--green);
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.contact-item p {
+    color: #69766f;
+    font-size: 14px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #e0e8e2;
+    border-radius: 8px;
+    margin-bottom: 14px;
+    font-family: inherit;
+    outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--green);
+}
+
+.contact-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.contact-form button {
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+/* FOOTER */
+
+footer {
+    background: #064b38;
+    color: white;
+    padding: 45px 0 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+footer h3 {
+    margin-bottom: 15px;
+}
+
+footer p,
+footer a {
+    color: #d5e7de;
+    font-size: 14px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.socials {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.socials a {
+    background: rgba(255,255,255,.12);
+    width: 38px;
+    height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.copyright {
+    border-top: 1px solid rgba(255,255,255,.15);
+    text-align: center;
+    padding-top: 20px;
+}
+
+/* WHATSAPP */
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 22px;
+    right: 22px;
+    z-index: 999;
+    background: #20bd63;
+    color: white;
+    padding: 13px 20px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 700;
+    box-shadow: 0 5px 20px rgba(0,0,0,.2);
+}
+
+.whatsapp-float i {
+    margin-right: 7px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:950px) {
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links a {
+        font-size: 12px;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width:750px) {
+    section {
+        padding: 60px 0;
+    }
+
+    .navbar {
+        min-height: 68px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 6%;
+        box-shadow: 0 8px 15px rgba(0,0,0,.08);
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        font-size: 15px;
+        padding: 7px 0;
+    }
+
+    .hero-content,
+    .about-grid,
+    .manager-card,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-content {
+        gap: 30px;
+    }
+
+    .hero-image,
+    .about-image {
+        max-height: 430px;
+    }
+
+    .manager-photo {
+        max-height: 430px;
+    }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media(max-width:450px) {
+    .logo {
+        font-size: 17px;
+    }
+
+    .hero-text h1 {
+        font-size: 36px;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .manager-card {
+        padding: 17px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-info,
+    .contact-form {
+        padding: 20px;
+    }
+
+    .hero-image,
+    .about-image,
+    .manager-photo,
+    .gallery-item {
+        aspect-ratio: 4/5;
+        max-height: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+<div class="container navbar">
+
+<a href="#home" class="logo">
+BULSHO-KAAB <span>PHARMACY</span>
+</a>
+
+<nav class="nav-links" id="navLinks">
+<a href="#home" data-en="Home" data-so="Hoyga">Hoyga</a>
+<a href="#about" data-en="About" data-so="Nagu Saabsan">Nagu Saabsan</a>
+<a href="#management" data-en="Management" data-so="Maamulka">Maamulka</a>
+<a href="#services" data-en="Services" data-so="Adeegyada">Adeegyada</a>
+<a href="#products" data-en="Products" data-so="Daawooyinka">Daawooyinka</a>
+<a href="#gallery" data-en="Gallery" data-so="Sawirrada">Sawirrada</a>
+<a href="#contact" data-en="Contact" data-so="Xiriir">Xiriir</a>
+</nav>
+
+<div class="nav-actions">
+<button class="lang-btn" onclick="toggleLanguage()">EN / SO</button>
+<button class="menu-btn" onclick="toggleMenu()" aria-label="Open menu">
+<i class="fas fa-bars"></i>
+</button>
+</div>
+
+</div>
+</header>
+
+<!-- HOME -->
+
+<section class="hero" id="home">
+<div class="container hero-content">
+
+<div class="hero-text">
+
+<h1 data-en="Your Health Is Our Success"
+data-so="Caafimaadkaagu Waa Guusheenna">
+Caafimaadkaagu Waa <span>Guusheenna</span>
+</h1>
+
+<p data-en="BULSHO-KAAB Pharmacy is ready to serve you 24 hours a day, 7 days a week. We prioritize quality service and continuous care."
+data-so="Farmashiyaha BULSHO-KAAB wuxuu diyaar u yahay inuu ku adeego 24 saacadood maalintii, 7 maalmood usbuucii. Waxaan mudnaanta siinnaa adeeg tayo leh iyo daryeel joogto ah.">
+Farmashiyaha BULSHO-KAAB wuxuu diyaar u yahay inuu ku adeego 24 saacadood maalintii, 7 maalmood usbuucii.
+</p>
+
+<div class="buttons">
+
+<a href="#contact" class="btn btn-green">
+<i class="fas fa-phone"></i>
+<span data-en="Contact Us" data-so="Nala Soo Xiriir">Nala Soo Xiriir</span>
+</a>
+
+<a href="#products" class="btn btn-orange">
+<i class="fas fa-pills"></i>
+<span data-en="View Products" data-so="Daawooyinka">Daawooyinka</span>
+</a>
+
+</div>
+</div>
+
+<div class="hero-image">
+<img src="pic3.jpg" alt="Bulsho Kaab Pharmacy" data-image="3">
+</div>
+
+</div>
+</section>
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+<div class="container about-grid">
+
+<div class="about-image">
+<img src="pic1.jpg" alt="Bulsho Kaab Pharmacy Management" data-image="1">
+</div>
+
+<div class="about-text">
+
+<h3 data-en="About Us" data-so="Nagu Saabsan">Nagu Saabsan</h3>
+
+<p data-en="BULSHO-KAAB Pharmacy provides quality pharmacy services to the community. We strive to offer excellent service, respect and continuous healthcare."
+data-so="BULSHO-KAAB Pharmacy wuxuu bulshada siiyaa adeegyo farmashiye oo tayo leh. Waxaan ku dadaalnaa adeeg wanaagsan, ixtiraam iyo daryeel caafimaad oo joogto ah.">
+BULSHO-KAAB Pharmacy wuxuu bulshada siiyaa adeegyo farmashiye oo tayo leh.
+</p>
+
+<div class="info-line">
+<i class="fas fa-location-dot"></i>
+<p>Xaarijaadka, dhinaca Irtoogde, Xarunta weyn ee Somtel, Baidoa, Bay, Somalia.</p>
+</div>
+
+<div class="info-line">
+<i class="fas fa-clock"></i>
+<p data-en="Open 24 Hours / 7 Days" data-so="Wuxuu furan yahay 24 Saac / 7 Maalmood">
+Wuxuu furan yahay 24 Saac / 7 Maalmood
+</p>
+</div>
+
+<div class="info-line">
+<i class="fas fa-heart"></i>
+<p data-en="Your health is our priority." data-so="Caafimaadkaagu waa mudnaantayada.">
+Caafimaadkaagu waa mudnaantayada.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- MANAGEMENT -->
+
+<section class="management" id="management">
+<div class="container">
+
+<div class="section-title">
+<h2 data-en="Our Management" data-so="Maamulka Farmashiyaha">
+Maamulka Farmashiyaha
+</h2>
+<p data-en="Meet our pharmacy management" data-so="Baro maamulka farmashiyahayaga">
+Baro maamulka farmashiyahayaga
+</p>
+</div>
+
+<div class="manager-card">
+
+<div class="manager-photo">
+<img src="pic2.jpg" alt="Dr. Ismail Ali Mohamed" data-image="2">
+</div>
+
+<div class="manager-info">
+
+<h3>Dr. ISMAIL ALI MOHAMED</h3>
+
+<p class="position" data-en="Pharmacy Management" data-so="Maamulka Farmashiyaha">
+Maamulka Farmashiyaha
+</p>
+
+<p data-en="Dedicated to providing quality healthcare services, professional support and reliable customer care."
+data-so="Waxaa ka go'an bixinta adeeg caafimaad oo tayo leh, taageero xirfadeed iyo daryeel wanaagsan oo bulshada loo fidiyo.">
+Waxaa ka go'an bixinta adeeg caafimaad oo tayo leh iyo daryeel wanaagsan oo bulshada loo fidiyo.
+</p>
+
+<a class="btn btn-green" href="tel:615027613">
+<i class="fas fa-phone"></i>
+615027613
+</a>
+
+</div>
+</div>
+</div>
+</section>
+
+<!-- SERVICES -->
+
+<section id="services">
+<div class="container">
+
+<div class="section-title">
+<h2 data-en="Our Services" data-so="Adeegyadayada">Adeegyadayada</h2>
+<p data-en="Quality care for our community" data-so="Daryeel tayo leh oo bulshada loogu adeegayo">
+Daryeel tayo leh oo bulshada loogu adeegayo
+</p>
+</div>
+
+<div class="services-grid">
+
+<div class="service-card">
+<i class="fas fa-pills"></i>
+<h3 data-en="Medicine Supply" data-so="Bixinta Daawooyinka">Bixinta Daawooyinka</h3>
+<p data-en="Access to a range of pharmacy products." data-so="Helitaanka noocyo kala duwan oo daawooyin ah.">
+Helitaanka noocyo kala duwan oo daawooyin ah.
+</p>
+</div>
+
+<div class="service-card">
+<i class="fas fa-user-doctor"></i>
+<h3 data-en="Health Support" data-so="Taageerada Caafimaadka">Taageerada Caafimaadka</h3>
+<p data-en="Friendly support for your healthcare needs." data-so="Taageero wanaagsan oo ku saabsan baahiyahaaga caafimaad.">
+Taageero wanaagsan oo ku saabsan baahiyahaaga caafimaad.
+</p>
+</div>
+
+<div class="service-card">
+<i class="fas fa-clock"></i>
+<h3 data-en="24/7 Service" data-so="Adeeg 24 Saac">Adeeg 24 Saac</h3>
+<p data-en="Available 24 hours a day, seven days a week." data-so="Adeeg diyaar ah 24 saac maalintii, 7 maalmood usbuucii.">
+Adeeg diyaar ah 24 saac maalintii, 7 maalmood usbuucii.
+</p>
+</div>
+
+<div class="service-card">
+<i class="fas fa-heart-pulse"></i>
+<h3 data-en="Healthcare Products" data-so="Agabka Caafimaadka">Agabka Caafimaadka</h3>
+<p data-en="Healthcare essentials for everyday needs." data-so="Agabka caafimaadka ee baahiyaha maalinlaha ah.">
+Agabka caafimaadka ee baahiyaha maalinlaha ah.
+</p>
+</div>
+
+<div class="service-card">
+<i class="fas fa-hand-holding-medical"></i>
+<h3 data-en="Customer Care" data-so="Daryeelka Macaamiisha">Daryeelka Macaamiisha</h3>
+<p data-en="Respectful and friendly customer service." data-so="Adeeg macaamiil oo ixtiraam iyo soo dhoweyn leh.">
+Adeeg macaamiil oo ixtiraam iyo soo dhoweyn leh.
+</p>
+</div>
+
+<div class="service-card">
+<i class="fas fa-shield-heart"></i>
+<h3 data-en="Quality Service" data-so="Adeeg Tayo Leh">Adeeg Tayo Leh</h3>
+<p data-en="We prioritize quality and responsible service." data-so="Waxaan mudnaanta siinnaa tayada iyo adeeg masuuliyad leh.">
+Waxaan mudnaanta siinnaa tayada iyo adeeg masuuliyad leh.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- PRODUCTS -->
+
+<section class="products" id="products">
+<div class="container">
+
+<div class="section-title">
+<h2 data-en="Our Products" data-so="Daawooyinka iyo Agabka">
+Daawooyinka iyo Agabka
+</h2>
+<p data-en="Explore our pharmacy categories" data-so="Baro qaybaha kala duwan ee farmashiyaha">
+Baro qaybaha kala duwan ee farmashiyaha
+</p>
+</div>
+
+<div class="products-grid">
+
+<div class="product-card">
+<i class="fas fa-capsules"></i>
+<h3 data-en="Medicines" data-so="Daawooyin">Daawooyin</h3>
+<p data-en="Different medicine categories" data-so="Noocyo kala duwan oo daawooyin ah">
+Noocyo kala duwan oo daawooyin ah
+</p>
+</div>
+
+<div class="product-card">
+<i class="fas fa-baby"></i>
+<h3 data-en="Baby Care" data-so="Daryeelka Carruurta">Daryeelka Carruurta</h3>
+<p data-en="Baby healthcare products" data-so="Agabka caafimaadka carruurta">
+Agabka caafimaadka carruurta
+</p>
+</div>
+
+<div class="product-card">
+<i class="fas fa-pump-soap"></i>
+<h3 data-en="Personal Care" data-so="Nadaafadda Qofka">Nadaafadda Qofka</h3>
+<p data-en="Personal hygiene products" data-so="Agabka nadaafadda qofka">
+Agabka nadaafadda qofka
+</p>
+</div>
+
+<div class="product-card">
+<i class="fas fa-stethoscope"></i>
+<h3 data-en="Medical Supplies" data-so="Agabka Caafimaadka">Agabka Caafimaadka</h3>
+<p data-en="Medical and healthcare essentials" data-so="Agabka muhiimka u ah caafimaadka">
+Agabka muhiimka u ah caafimaadka
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- GALLERY -->
+
+<section id="gallery">
+<div class="container">
+
+<div class="section-title">
+<h2 data-en="Our Gallery" data-so="Sawirrada">Sawirrada</h2>
+<p data-en="Explore BULSHO-KAAB Pharmacy" data-so="Daawo sawirrada BULSHO-KAAB Pharmacy">
+Daawo sawirrada BULSHO-KAAB Pharmacy
+</p>
+</div>
+
+<div class="gallery-grid">
+
+<div class="gallery-item">
+<img src="pic1.jpg" alt="Pharmacy photo 1" data-image="1">
+</div>
+
+<div class="gallery-item">
+<img src="pic2.jpg" alt="Pharmacy photo 2" data-image="2">
+</div>
+
+<div class="gallery-item">
+<img src="pic3.jpg" alt="Pharmacy photo 3" data-image="3">
+</div>
+
+<div class="gallery-item">
+<img src="pic4.jpg" alt="Pharmacy photo 4" data-image="4">
+</div>
+
+<div class="gallery-item">
+<img src="pic5.jpg" alt="Pharmacy photo 5" data-image="5">
+</div>
+
+<div class="gallery-item">
+<img src="pic6.jpg" alt="Pharmacy photo 6" data-image="6">
+</div>
+
+<div class="gallery-item">
+<img src="pic7.jpg" alt="Pharmacy photo 7" data-image="7">
+</div>
+
+<div class="gallery-item">
+<img src="pic8.jpg" alt="Pharmacy photo 8" data-image="8">
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+<div class="container">
+
+<div class="section-title">
+<h2 data-en="Contact Us" data-so="Nala Soo Xiriir">Nala Soo Xiriir</h2>
+<p data-en="We are ready to assist you" data-so="Waxaan diyaar u nahay inaan ku caawinno">
+Waxaan diyaar u nahay inaan ku caawinno
+</p>
+</div>
+
+<div class="contact-grid">
+
+<div class="contact-info">
+
+<h3 data-en="Contact Information" data-so="Macluumaadka Xiriirka">
+Macluumaadka Xiriirka
+</h3>
+
+<div class="contact-item">
+<i class="fas fa-phone"></i>
+<div>
+<strong>Phone</strong>
+<p><a href="tel:615027613">615027613</a></p>
+<p><a href="tel:625027613">625027613</a></p>
+</div>
+</div>
+
+<div class="contact-item">
+<i class="fab fa-whatsapp"></i>
+<div>
+<strong>WhatsApp</strong>
+<p><a href="https://wa.me/252615027613" target="_blank">+252 615027613</a></p>
+</div>
+</div>
+
+<div class="contact-item">
+<i class="fas fa-location-dot"></i>
+<div>
+<strong>Location</strong>
+<p>Xaarijaadka, dhinaca Irtoogde, Xarunta weyn ee Somtel, Baidoa, Bay, Somalia.</p>
+</div>
+</div>
+
+<div class="contact-item">
+<i class="fas fa-clock"></i>
+<div>
+<strong>Working Hours</strong>
+<p>24 Hours / 7 Days</p>
+</div>
+</div>
+
+</div>
+
+<div class="contact-form">
+
+<h3 data-en="Send Us a Message" data-so="Fariin Noo Soo Dir">
+Fariin Noo Soo Dir
+</h3>
+
+<form id="contactForm">
+
+<input type="text" id="customerName"
+placeholder="Magacaaga / Your Name" required>
+
+<input type="tel" id="customerPhone"
+placeholder="Telefoonkaaga / Phone" required>
+
+<textarea id="customerMessage"
+placeholder="Fariintaada / Your Message" required></textarea>
+
+<button type="submit" class="btn btn-green">
+<i class="fab fa-whatsapp"></i>
+Send via WhatsApp
+</button>
+
+</form>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+<div class="container">
+
+<div class="footer-grid">
+
+<div>
+<h3>BULSHO-KAAB <span style="color:#e5a13a">PHARMACY</span></h3>
+
+<p data-en="Your health is our success. We are committed to quality service and community healthcare."
+data-so="Caafimaadkaagu waa guusheenna. Waxaa naga go'an adeeg tayo leh iyo daryeelka caafimaadka bulshada.">
+Caafimaadkaagu waa guusheenna. Waxaa naga go'an adeeg tayo leh iyo daryeelka caafimaadka bulshada.
+</p>
+
+<div class="socials">
+
+<a href="https://wa.me/252615027613" target="_blank" aria-label="WhatsApp">
+<i class="fab fa-whatsapp"></i>
+</a>
+
+<a href="tel:615027613" aria-label="Phone">
+<i class="fas fa-phone"></i>
+</a>
+
+</div>
+</div>
+
+<div>
+<h3 data-en="Quick Links" data-so="Bogagga">Bogagga</h3>
+<div class="footer-links">
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#services">Services</a>
+<a href="#gallery">Gallery</a>
+<a href="#contact">Contact</a>
+</div>
+</div>
+
+<div>
+<h3 data-en="Contact" data-so="Xiriir">Xiriir</h3>
+<div class="footer-links">
+<a href="tel:615027613">615027613</a>
+<a href="tel:625027613">625027613</a>
+<a href="https://wa.me/252615027613">WhatsApp</a>
+<p>Baidoa, Bay, Somalia</p>
+</div>
+</div>
+
+</div>
+
+<div class="copyright">
+<p>
+&copy; <span id="year"></span> BULSHO-KAAB PHARMACY.
+All Rights Reserved.
+</p>
+<p>Designed for BULSHO-KAAB PHARMACY</p>
+</div>
+
+</div>
+</footer>
+
+<!-- WHATSAPP BUTTON -->
+
+<a class="whatsapp-float"
+href="https://wa.me/252615027613"
+target="_blank">
+<i class="fab fa-whatsapp"></i> WhatsApp
+</a>
+
+<script>
+
+/* MOBILE MENU */
+
+function toggleMenu() {
+    document.getElementById("navLinks").classList.toggle("active");
+}
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        document.getElementById("navLinks").classList.remove("active");
+    });
+});
+
+/* LANGUAGE SWITCH */
+
+let currentLanguage = "so";
+
+function toggleLanguage() {
+
+    currentLanguage = currentLanguage === "so" ? "en" : "so";
+
+    document.documentElement.lang = currentLanguage;
+
+    document.querySelectorAll("[data-en][data-so]").forEach(element => {
+        element.textContent = element.getAttribute(
+            currentLanguage === "en" ? "data-en" : "data-so"
+        );
+    });
+}
+
+/* IMAGE LOADER */
+
+function loadFlexibleImages() {
+
+    document.querySelectorAll("img[data-image]").forEach(img => {
+
+        const number = img.getAttribute("data-image");
+
+        const candidates = [
+            `pic${number}.jpg`,
+            `pic ${number}.jpg`,
+            `pic${number}.jpeg`,
+            `pic ${number}.jpeg`,
+            `pic${number}.png`,
+            `pic ${number}.png`,
+            `pic${number}.webp`,
+            `pic ${number}.webp`,
+            `images/pic${number}.jpg`,
+            `images/pic ${number}.jpg`,
+            `images/pic${number}.png`,
+            `Bulsho kaab/pic${number}.jpg`,
+            `Bulsho kaab/pic ${number}.jpg`,
+            `Bulsho kaab/pic${number}.png`
+        ];
+
+        let index = 0;
+
+        function tryNextImage() {
+
+            if (index >= candidates.length) {
+                img.style.display = "none";
+                console.warn("Image not found: pic" + number);
+                return;
+            }
+
+            img.src = candidates[index++];
+        }
+
+        img.onerror = tryNextImage;
+        tryNextImage();
+
+    });
+}
+
+/* CONTACT FORM - WHATSAPP */
+
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    const name = document.getElementById("customerName").value.trim();
+    const phone = document.getElementById("customerPhone").value.trim();
+    const message = document.getElementById("customerMessage").value.trim();
+
+    const text =
+        "Hello BULSHO-KAAB PHARMACY\n\n" +
+        "Name: " + name + "\n" +
+        "Phone: " + phone + "\n" +
+        "Message: " + message;
+
+    const url = "https://wa.me/252615027613?text=" + encodeURIComponent(text);
+
+    window.open(url, "_blank");
+
+});
+
+/* CURRENT YEAR */
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+/* START */
+
+loadFlexibleImages();
+
+</script>
+
+<!-- PWA SERVICE WORKER REGISTRATION -->
+<script>
+if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+        navigator.serviceWorker.register("./service-worker.js")
+            .then(() => console.log("BULSHO-KAAB App Ready!"))
+            .catch(error => console.error("Service Worker Error:", error));
+    });
+}
+</script>
+
+</body>
+</html>
